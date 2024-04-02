@@ -17,8 +17,7 @@ export const updateTodo = ({
   id,
   title,
   completed,
-}: Omit<Todo, 'userId'>,
-): Promise<Todo> => {
+}: Omit<Todo, 'userId'>): Promise<Todo> => {
   return client.patch(`/todos/${id}`, {
     completed,
     title,
