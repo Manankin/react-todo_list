@@ -5,7 +5,7 @@ import { Errors } from '../types/Errors';
 import { Todo } from '../types/Todo';
 
 interface Props {
-  userId: number,
+  userId: number;
   inputText: string;
   active: Todo[];
   setInputText: (str: string) => void;
@@ -84,7 +84,7 @@ export const Header: React.FC<Props> = ({
           ref={inputField}
           disabled={isLoading}
           value={inputText}
-          onChange={(e) => setInputText(e.target.value)}
+          onChange={e => setInputText(e.target.value)}
         />
       </form>
     </header>

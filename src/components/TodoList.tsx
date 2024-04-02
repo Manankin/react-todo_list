@@ -12,7 +12,11 @@ interface Props {
 }
 
 export const TodoList: React.FC<Props> = ({
-  todos, deleteTodo, handleUpdateTodo, isLoading, handleEdit,
+  todos,
+  deleteTodo,
+  handleUpdateTodo,
+  isLoading,
+  handleEdit,
 }) => (
   <section className="todoapp__main" data-cy="TodoList">
     {todos.map(todo => (
@@ -23,7 +27,6 @@ export const TodoList: React.FC<Props> = ({
         handleUpdateTodo={handleUpdateTodo}
         isLoading={isLoading}
         editTodo={handleEdit}
-      // loading={false}
       />
     ))}
   </section>

@@ -13,10 +13,14 @@ export const deleteTodo = (todoId: number) => {
   return client.delete(`/todos/${todoId}`);
 };
 
-export const updateTodo = (
-  { id, title, completed }: Omit<Todo, 'userId'>,
+export const updateTodo = ({
+  id,
+  title,
+  completed,
+}: Omit<Todo, 'userId'>,
 ): Promise<Todo> => {
   return client.patch(`/todos/${id}`, {
-    completed, title,
+    completed,
+    title,
   });
 };

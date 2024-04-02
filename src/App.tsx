@@ -2,9 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { UserWarning } from './UserWarning';
-import {
-  addTodo, deleteTodo, getTodos, updateTodo,
-} from './api/todos';
+import { addTodo, deleteTodo, getTodos, updateTodo } from './api/todos';
 import { Todo } from './types/Todo';
 import { Errors } from './types/Errors';
 import { SortType } from './types/SortType';
@@ -68,7 +66,7 @@ export const App: React.FC = () => {
     const { id, completed, title } = todo;
 
     await updateTodo({ id, completed: !completed, title })
-      .then((updatedTodo) => {
+      .then(updatedTodo => {
         setTodos(currentTodos => {
           const tempTodos = [...currentTodos];
           const index = tempTodos.findIndex(item => item.id === updatedTodo.id);
@@ -87,7 +85,7 @@ export const App: React.FC = () => {
     if (activeTodo.length) {
       activeTodo.forEach(todo => handleToggleTodo(todo));
     } else {
-      completedTodo.forEach((todo) => handleToggleTodo(todo));
+      completedTodo.forEach(todo => handleToggleTodo(todo));
     }
   };
 
@@ -95,7 +93,7 @@ export const App: React.FC = () => {
     setErrorMessage('');
 
     await updateTodo({ ...todo, title: newTitle })
-      .then((updatedTodo) => {
+      .then(updatedTodo => {
         setTodos(currentTodos => {
           const tempTodos = [...currentTodos];
           const index = tempTodos.findIndex(item => item.id === updatedTodo.id);
@@ -181,18 +179,15 @@ export const App: React.FC = () => {
             deleteCompleted={handleDeleteCompleted}
           />
         )}
-
       </div>
 
       {/* {!!errorMessage.length && ( */}
       <div
         data-cy="ErrorNotification"
-        className={
-          classNames('notification is-danger is-light has-text-weight-normal',
-            {
-              hidden: !errorMessage,
-            })
-        }
+        className={classNames(
+          'notification is-danger is-light has-text-weight-normal',
+          { hidden: !errorMessage },
+        )}
       >
         <button
           data-cy="HideErrorButton"

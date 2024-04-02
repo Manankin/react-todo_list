@@ -12,7 +12,11 @@ interface Props {
 }
 
 export const Footer: React.FC<Props> = ({
-  active, completed, setSortBy, sortBy, deleteCompleted,
+  active,
+  completed,
+  setSortBy,
+  sortBy,
+  deleteCompleted,
 }) => {
   return (
     <footer className="todoapp__footer" data-cy="Footer">
@@ -24,10 +28,9 @@ export const Footer: React.FC<Props> = ({
       <nav className="filter" data-cy="Filter">
         <a
           href="#/"
-          className={classNames(
-            'filter__link',
-            { selected: sortBy === SortType.All },
-          )}
+          className={classNames('filter__link', {
+            selected: sortBy === SortType.All,
+          })}
           data-cy="FilterLinkAll"
           onClick={() => setSortBy(SortType.All)}
         >
@@ -36,10 +39,9 @@ export const Footer: React.FC<Props> = ({
 
         <a
           href="#/active"
-          className={classNames(
-            'filter__link',
-            { selected: sortBy === SortType.Active },
-          )}
+          className={classNames('filter__link', {
+            selected: sortBy === SortType.Active,
+          })}
           data-cy="FilterLinkActive"
           onClick={() => setSortBy(SortType.Active)}
         >
@@ -48,13 +50,11 @@ export const Footer: React.FC<Props> = ({
 
         <a
           href="#/completed"
-          className={classNames(
-            'filter__link',
-            { selected: sortBy === SortType.Completed },
-          )}
+          className={classNames('filter__link', {
+            selected: sortBy === SortType.Completed,
+          })}
           data-cy="FilterLinkCompleted"
           onClick={() => setSortBy(SortType.Completed)}
-
         >
           {SortType.Completed}
         </a>
