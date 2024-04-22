@@ -1,7 +1,6 @@
-# React TypeScript Starter Pack
+# SPA Todo list
+- [DEMO LINK] (https://manankin.github.io/react-tdo_list)
+- [CODE] (https://github.com/Manankin/react-todo_list/tree/main/src)
 
-To use this template click `Use this template`
-
-### Available Scripts
-
-`Deploy` - available to deploy your application to gh-pages
+Technologies:
+- React JS, JavaScript, TypeScript, HTML, SCSS, fetch
